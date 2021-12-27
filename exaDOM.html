@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>RESERVAS DE CINE CARLOS III</h1>
+    <div id="contenedor">
+    </div><br>
+    <label>Total de reservas</label>
+    <input type="text" id="texto" readonly>
+    <button id="limpiar">limpiar</button>
+    <script>
+        let contenedor = document.getElementById('contenedor');
+        let limpiar = document.getElementById('limpiar');
+
+	let tabla = contenedor.appendChild(document.createElement('table'));
+
+        for(i=0;i<=10;i++){
+        let fila = tabla.appendChild(document.createElement("tr"));
+
+
+        for(j=0;j<=20;j++){
+        let columna = fila.appendChild(document.createElement("td"));
+        columna.style.backgroundColor=('green');
+        columna.style.border=('solid black 0.1em');
+        columna.style.width=('10px');
+        columna.style.height=('10px');
+        columna.style.margin=('1em');
+
+        columna.addEventListener('click',cambiocolor);
+
+        function cambiocolor(){
+            if(columna.style.backgroundColor==('green')){
+            columna.style.backgroundColor=('red');
+
+            //if(columna.style.backgroundColor==('red'))
+            texto.value++;
+        }else
+            columna.style.backgroundColor=('green');
+            if(columna.style.backgroundColor==('green'))
+            texto.value--;
+
+        }
+        limpiar.addEventListener('click',reiniciar);
+
+        function reiniciar(){
+            columna.style.backgroundColor=('green');
+            texto.value=0;
+        }
+        }
+}
+</script>
+	</body>
+		</html>
