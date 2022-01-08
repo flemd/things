@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo mousepad /etc/libvirt/hooks/qemu.d/win10/prepare/begin/start.sh
+
